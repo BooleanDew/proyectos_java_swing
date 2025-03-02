@@ -1,4 +1,4 @@
-# Bienvenido, aqui podras encontrar una serie de pequeños sistemas desarrollado en java.
+Bienvenido, aqui podras encontrar una serie de pequeños sistemas desarrollado en java.
 # Proyecto #1: Inventario
 
 ## Estructura del Proyecto
