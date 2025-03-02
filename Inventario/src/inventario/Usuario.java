@@ -1,7 +1,6 @@
 package inventario;
 
 import java.sql.*;
-import javax.swing.JOptionPane;
 
 public class Usuario {
 
@@ -43,8 +42,7 @@ public class Usuario {
         return 0;
     }
 
-    public void setLogin(String nombre, String clave) {
-        System.out.println(nombre+" " +clave);
+    public String setLogin(String nombre, String clave) {
         try {
             Connection con = c.getConexion();
             String sql = "SELECT * FROM usuarios WHERE nombre = ? AND clave = ?";
@@ -52,15 +50,15 @@ public class Usuario {
             ps.setString(1, nombre);
             ps.setString(2, clave);
             ResultSet rs = ps.executeQuery();
-
             while (rs.next()) {
-                this.nombre = rs.getString("nombre");
+                return rs.getString("nombre");
+
             }
-            con.close();
+
         } catch (SQLException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
+        return "";
     }
 
     public String getLogin() {
